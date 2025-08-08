@@ -375,6 +375,105 @@ section {
     border-radius: 999px
 }
 
+/* ========= Layout base (já deve existir algo parecido) ========= */
+.container {
+    width: min(1140px, 92%);
+    margin-inline: auto
+}
+
+/* ========= QUEM SOMOS ========= */
+#quem-somos .about {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 32px;
+    align-items: center;
+}
+
+#quem-somos .card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, .12);
+}
+
+#quem-somos .card img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    /* evita imagem exagerada em telas grandes */
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+#quem-somos .section-title {
+    font-size: 34px;
+    margin: 0 0 12px
+}
+
+#quem-somos .lead {
+    font-size: 18px;
+    color: #475569
+}
+
+#quem-somos .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-top: 10px
+}
+
+#quem-somos .badge .dot {
+    width: 8px;
+    height: 8px;
+    background: #b6932a;
+    border-radius: 999px
+}
+
+#quem-somos .about {
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+@media (max-width: 980px) {
+    #quem-somos .about {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    /* Imagem primeiro, texto depois */
+    #quem-somos .about>.card {
+        order: 1;
+    }
+
+    #quem-somos .about>div:not(.card) {
+        order: 2;
+    }
+
+    #quem-somos .section-title {
+        font-size: 28px
+    }
+
+    #quem-somos .lead {
+        font-size: 16px
+    }
+
+    #quem-somos .card img {
+        max-height: 360px;
+        border-radius: 8px;
+    }
+
+    #quem-somos .card {
+        padding: 8px;
+    }
+}
+
+
 /* Cursos */
 .courses {
     background: var(--gray-50)
@@ -446,6 +545,25 @@ section {
     box-shadow: var(--shadow-md)
 }
 
+.btn-map {
+    display: block;
+    margin-top: 16px;
+    background: #163d73;
+    /* azul institucional */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, .12);
+    transition: background .25s;
+}
+
+.btn-map:hover {
+    background: #1f4f8a;
+}
+
+
 /* Contato */
 .contact {
     background: linear-gradient(180deg, #6985aa, #a7bad3)
@@ -455,15 +573,16 @@ section {
     display: grid;
     gap: 18px;
     grid-template-columns: 1.2fr .8fr;
-    align-items: center
+    align-items: center;
 }
 
 .cta-box {
-    background: var(--blue-900);
+    background: #163d73;
+    /* seu azul já mais claro */
     color: #fff;
     padding: 28px;
     border-radius: 16px;
-    box-shadow: var(--shadow-lg)
+    box-shadow: 0 12px 32px rgba(2, 6, 23, .18);
 }
 
 .cta-box h3 {
@@ -489,7 +608,8 @@ section {
 
 .socials {
     display: flex;
-    gap: 10px
+    gap: 10px;
+    flex-wrap: wrap
 }
 
 .socials a {
@@ -500,7 +620,52 @@ section {
     height: 44px;
     background: #fff;
     border-radius: 12px;
-    box-shadow: var(--shadow-md)
+    box-shadow: 0 6px 18px rgba(2, 6, 23, .12)
+}
+
+/* ======= MOBILE / TABLET ======= */
+@media (max-width: 980px) {
+    .cta-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-box {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .whats {
+        width: 100%;
+        /* botão ocupa toda a largura no mobile */
+        justify-content: center;
+    }
+}
+
+/* ========= MAPA ========= */
+.map {
+    border: 0;
+    width: 100%;
+    height: 420px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, .12)
+}
+
+@media (max-width: 980px) {
+    .map {
+        height: 320px;
+        border-radius: 12px
+    }
+}
+
+/* ========= Espaçamentos gerais nas sections ========= */
+section {
+    padding: 72px 0
+}
+
+@media (max-width: 980px) {
+    section {
+        padding: 48px 0
+    }
 }
 
 /* Footer */
