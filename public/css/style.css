@@ -500,7 +500,7 @@ section {
 }
 
 .card img {
-    height: 320px;
+    height: auto;
     object-fit: cover
 }
 
@@ -566,7 +566,7 @@ section {
 
 /* Contato */
 .contact {
-    background: linear-gradient(180deg, #6985aa, #a7bad3)
+    background: linear-gradient(180deg, #a3bfe4, #a7bad3)
 }
 
 .cta-panel {
